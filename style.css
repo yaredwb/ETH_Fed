@@ -1,0 +1,60 @@
+.background {
+  fill: none;
+  pointer-events: all;
+  border: #aaa;
+}
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+#regions {
+  fill: #aaa;
+}
+
+#zones {
+  fill: #aaa;
+}
+
+#regions .active {
+  display: none;
+}
+
+#zones .active {
+  display: none;
+}
+
+#region-borders {
+  fill: none;
+  stroke: black;
+  stroke-width: 0.5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+.zone-boundary {
+  fill: lightslategray;
+  stroke: #fff;
+  stroke-width: 0.5px;
+}
+
+.region:hover {
+  fill: orange;
+}
+
+.zone-boundary:hover {
+  fill: lightgreen;
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 200px;
+  height: 30px;
+  padding: 2px;
+  font: 24px sans-serif;
+  border: 0px;
+  pointer-events: none;
+}
