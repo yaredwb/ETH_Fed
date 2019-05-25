@@ -9,8 +9,7 @@ var margin = {
   , height = width * mapRatio
   , active = d3.select(null);
 
-console.log(width);
-// Amharic equivalents
+// Amharic equivalents for regions
 var regionAmhNames = {
   'Addis Abeba': 'አዲስ አበባ',
   'Afar': 'አፋር',
@@ -25,13 +24,14 @@ var regionAmhNames = {
   'Tigray': 'ትግራይ'
 };
 
+// Amharic equivalents for zones
 var zoneAmhNames = {
   "Mi'irabawi" : 'ምዕራባዊ',
   "Semien Mi'irabaw" : 'ሰሜን ምዕራባዊ',
   'Mehakelegnaw' : 'መሃከለኛው',
   'Misraqawi' : 'ምስራቃዊ',
   'Debubawi' : 'ደቡባዊ',
-  'Semen Gondar' : 'ሰሜን ጎንደር',      
+  'Semen Gondar' : 'ሰሜን ጎንደር',
   'Debub Gondar' : 'ደቡብ ጎንደር',
   'Agew Awi' : 'አገው አዊ',
   'Wag Himra' : 'ዋግ ኸምራ',
@@ -105,7 +105,7 @@ var zoneAmhNames = {
 };
 
 var svg = d3.select(".viz").append("svg")
-  .attr("class", "center-container")      
+  .attr("class", "center-container")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom);
 
@@ -117,7 +117,6 @@ svg.append("rect")
 
 var regions = d3.json("gadm36_ETH_1.json");
 var zones = d3.json("gadm36_ETH_2.json");
-//var woredas = d3.json("gadm36_ETH_3.json");
 
 Promise.all([regions, zones])
   .then(ready);
@@ -147,12 +146,9 @@ function ready(values) {
     .on("mouseover", function(d) {
       tooltip.transition()
       .duration(200)
-      .style("opacity", 0.9);
-      console.log(d.properties.NAME_2);
+      .style("opacity", 0.9);      
       tooltip.html(zoneAmhNames[d.properties.NAME_2])
       .style('display', 'inline');
-      //.style("left", (d3.event.pageX) + "px")
-      //.style("top", (d3.event.pageY) + "px");
     })
     .on("mousemove", function(d) {
       tooltip.html(zoneAmhNames[d.properties.NAME_2])
