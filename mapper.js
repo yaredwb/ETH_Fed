@@ -97,11 +97,11 @@ var zoneAmhNames = {
   'Mirab Arsi' : 'ምዕራብ አርሲ',
   'Guji' : 'ጉጂ',
   'Borena' : 'ቦረና',
-  'Afar Zone 1' : 'አውሲ ራሱ',
-  'Afar Zone 2' : 'ኪልበት ራሱ',
-  'Afar Zone 3' : 'ጋቢ ራሱ',
-  'Afar Zone 4' : 'ፋንቴና ራሱ',
-  'Afar Zone 5' : 'ሀሪ ራሱ'
+  'Afar Zone 1' : 'አውሲ ረሱ',
+  'Afar Zone 2' : 'ክልበቲ  ረሱ',
+  'Afar Zone 3' : 'ጋቢ ረሱ',
+  'Afar Zone 4' : 'ፈንቲ ረሱ',
+  'Afar Zone 5' : 'ሀሪ ረሱ'
 };
 
 var svg = d3.select(".viz").append("svg")
